@@ -2,7 +2,7 @@
 const menuDiv = document.getElementById("menu");
 
 if (menuDiv) {
-  fetch("./songs.json")
+  fetch("songs/songs.json")
     .then(res => res.json())
     .then(data => {
       for (let group in data) {
@@ -34,7 +34,7 @@ let lyricsData = {};
 let currentScript = "kannada";
 
 if (filePath) {
-  fetch(`./${filePath}`)
+  fetch(`./songs/${filePath}`)
     .then(res => res.text())
     .then(text => parseMarkdown(text));
 }
