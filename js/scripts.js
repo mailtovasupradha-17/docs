@@ -29,7 +29,9 @@ if (menuDiv) {
 // -------- SONG PAGE --------
 const params = new URLSearchParams(window.location.search);
 const filePath = params.get("file");
-
+if (filePath) {
+  fetch(`songs/${filePath}`)
+}
 let lyricsData = {};
 let currentScript = "kannada";
 
