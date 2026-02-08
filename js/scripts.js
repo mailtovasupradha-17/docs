@@ -34,15 +34,19 @@ let filePath = params.get("file");
 if (filePath) {
   filePath = filePath.replace(/^(docs\/|songs\/)+/, "");
 }
+let filePath = params.get("file");
+
+// Normalize: strip leading docs/ or songs/ so we never double paths (e.g. on GitHub Pages /docs/)
+if (filePath) {
+  filePath = filePath.replace(/^(docs\/|songs\/)+/, "");
+}
 
 let lyricsData = {};
 let currentScript = "kannada";
 
 if (filePath) {
-  // Resolve songs path relative to current page (works for both localhost and GitHub Pages)
-  const basePath = window.location.pathname.replace(/\/[^/]*$/, "") || ".";
-  const songsUrl = `${basePath}/songs/${filePath}`;
-  fetch(songsUrl)
+  // Relative to current page only — avoids doubling base path (e.g. /docs/docs/) on GitHub Pages
+  fetch(`songs/${filePath}`)
     .then(res => res.text())
     .then(text => parseMarkdown(text));
 }
