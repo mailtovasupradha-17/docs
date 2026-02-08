@@ -34,12 +34,6 @@ let filePath = params.get("file");
 if (filePath) {
   filePath = filePath.replace(/^(docs\/|songs\/)+/, "");
 }
-let filePath = params.get("file");
-
-// Normalize: strip leading docs/ or songs/ so we never double paths (e.g. on GitHub Pages /docs/)
-if (filePath) {
-  filePath = filePath.replace(/^(docs\/|songs\/)+/, "");
-}
 
 let lyricsData = {};
 let currentScript = "kannada";
