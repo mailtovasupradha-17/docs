@@ -1,8 +1,12 @@
 {
   "Suladigalu": [
     {
-      "title": "Gajanana Suladi (Sri Abhinava Pranesha Dasaru)",
+      "title": "Gajanana Stotra Suladi (Sri Abhinava Pranesha Dasaru)",
       "file": "suladigalu/gajanana_suladi.md"
+    },
+    {
+      "title": "Sri Rudra Devara Suladi Suladi (Sri Abhinava Pranesha Dasaru)",
+      "file": "suladigalu/rudra_devara_suladi.md"
     }
   ]
 }
